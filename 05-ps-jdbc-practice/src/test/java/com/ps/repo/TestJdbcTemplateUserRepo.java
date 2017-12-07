@@ -4,7 +4,6 @@ import com.ps.config.AppConfig;
 import com.ps.config.TestDataConfig;
 import com.ps.repos.UserRepo;
 import com.ps.ents.User;
-import com.ps.util.Pair;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -32,7 +31,7 @@ public class TestJdbcTemplateUserRepo {
 
     @Autowired
     @Qualifier("userTemplateRepo")
-    UserRepo userRepo;
+    private UserRepo userRepo;
 
     @Before
     public void setUp() {

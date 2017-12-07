@@ -75,11 +75,13 @@ public class JdbcNamedTemplateUserRepo implements UserRepo {
 
     @Override
     public User findById(Long id) {
-        String sql = "select id, email, username,password from p_user where id= :id";
+        String sql = "select id, email, username, password from p_user where id= :id";
         Map<String, Object> params = new HashMap<>();
         params.put("id", id);
         // add NamedParameterJdbcTemplate instance call to find an user
-        return null;
+        // DONE.
+        User user = jdbcNamedTemplate.queryForObject(sql, params, rowMapper);
+        return user;
     }
 
     @Override
